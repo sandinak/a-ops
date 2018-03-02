@@ -12,8 +12,8 @@ should make it easy to see the power of the system.
 
 Setting the context for your shell is really easy, you just need to know the AZ name:
 ```
-brmathes@BRMATHES-M-C0SW > az stage1.mc
-brmathes@BRMATHES-M-C0SW [stage1.mc] >
+brmathes@BRMATHES-M-C0SW > az CLIENT1.pv
+brmathes@BRMATHES-M-C0SW [CLIENT1.pv] >
 ```
 This does several things for you:
 - finds the AZ in the inventory
@@ -50,19 +50,19 @@ brmathes@BRMATHES-M-C0SW [CLIENT1.pv] > mcp1 uptime
    
 Using the power of ansible  can do some quick things across hostgroups defined in the AZ:
 ```
-brmathes@BRMATHES-M-C0SW [stage1.mc] > ansible -m shell -a 'uname -a' mcp
-mcp1.stage1.mc.hosted.in | success | rc=0 >>
-Linux mcp1.stage1.mc.hosted.in 3.10.0-327.el7.x86_64 #1 SMP 
+brmathes@BRMATHES-M-C0SW [CLIENT1.pv] > ansible -m shell -a 'uname -a' mcp
+mcp1.CLIENT1.pv.hosted.in | success | rc=0 >>
+Linux mcp1.CLIENT1.pv.hosted.in 3.10.0-327.el7.x86_64 #1 SMP 
 
-mcp2.stage1.mc.hosted.in | success | rc=0 >>
-Linux mcp2.stage1.mc.hosted.in 3.10.0-327.el7.x86_64 #1 SMP 
+mcp2.CLIENT1.pv.hosted.in | success | rc=0 >>
+Linux mcp2.CLIENT1.pv.hosted.in 3.10.0-327.el7.x86_64 #1 SMP 
 
-mcp3.stage1.mc.hosted.in | success | rc=0 >>
-Linux mcp3.stage1.mc.hosted.in 3.10.0-327.el7.x86_64 #1 SMP 
+mcp3.CLIENT1.pv.hosted.in | success | rc=0 >>
+Linux mcp3.CLIENT1.pv.hosted.in 3.10.0-327.el7.x86_64 #1 SMP 
 ```
 
 You can find tickets for the current AZ using the tickets tool. It has a -v if you want more detail
-````
+```
 brmathes@BRMATHES-M-C0SW [CLIENT1.pv] > tickets
 4193 - CLIENT1 openstack 1.7.4 upgrade                    2017-02-06T13:55:41Z
 4210 - CLIENT Port for DNS                                2017-02-10T19:01:57Z
@@ -78,9 +78,9 @@ You can add (or remove) a ticket to your context so that as you're working, upda
 automagically sent to the ticket (when it makes sense) 
 
 ```
-brmathes@BRMATHES-M-C0SW > az stage1.mc
-brmathes@BRMATHES-M-C0SW [stage1.mc] > ticket 1234
-brmathes@BRMATHES-M-C0SW [stage1.mc-1234] > az
+brmathes@BRMATHES-M-C0SW > az CLIENT1.pv
+brmathes@BRMATHES-M-C0SW [CLIENT1.pv] > ticket 1234
+brmathes@BRMATHES-M-C0SW [CLIENT1.pv-1234] > az
 brmathes@BRMATHES-M-C0SW [-1234] > ticket
 brmathes@BRMATHES-M-C0SW >
 ```
