@@ -75,7 +75,7 @@ Use binary tools to access information in Zendesk and Zabbix quickly.
 
 ```
 brmathes@BRMATHES-M-C0SW [CLIENT1.pv] > tickets
-zstatu5928 - STAGE1 network issue                                         2017-03-27T16:03:45Z
+5928 - STAGE1 network issue                                         2017-03-27T16:03:45Z
 5780 - change service URLs in STAGE1                                2017-03-23T18:24:13Z
 5407 - Two availability zones named "stage1" and one named "enic"   2017-03-21T23:03:00Z
 5435 - Testing Ticket, please ignore                                2017-03-23T22:02:36Z
