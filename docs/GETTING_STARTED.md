@@ -220,6 +220,7 @@ ok: [mcp1.CLIENT1.pv.hosted.in] => (item={'connect_port': 8443, 'connect_host': 
 
 PLAY RECAP ********************************************************************
 mcp1.CLIENT1.pv.hosted.in : ok=6    changed=0    unreachable=0    failed=0
+```
 
 This test playbook is pretty simple.. and shows how we can aggregate playbooks effectively:
 ```
@@ -227,8 +228,6 @@ brmathes@BRMATHES-M-C0SW [CLIENT1.pv] > cat playbooks/tests/network/all.yml
 - include: dns.yml
 - include: vpn.yml
 - include: stunnel.yml
-```
-
 ```
 
 This means we can also call them individually when needed:
